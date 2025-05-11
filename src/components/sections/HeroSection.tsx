@@ -76,10 +76,10 @@ export function HeroSection() {
           We craft stunning digital experiences and innovative marketing strategies that captivate audiences and drive growth. Discover your brand's true potential.
         </p>
         
-        <div className="mt-10 bg-card p-1.5 sm:p-2 rounded-xl shadow-xl border border-border/20">
+        <div className="mt-10 bg-card p-1.5 sm:p-2 rounded-xl shadow-lg border border-border/20">
           <form 
             onSubmit={handleHeroSubmit} 
-            className="flex flex-col sm:flex-row items-stretch gap-0 sm:rounded-lg sm:shadow-inner sm:overflow-hidden bg-background sm:border sm:border-input"
+            className="flex flex-col sm:flex-row items-stretch gap-0 sm:rounded-lg sm:overflow-hidden bg-background sm:border sm:border-input"
           >
             <Input
               type="text"
@@ -118,7 +118,7 @@ export function HeroSection() {
         </div>
       </div>
       <div className="lg:w-1/2 mt-10 lg:mt-0">
-        <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-2xl">
+        <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
           <Image
             src="https://picsum.photos/seed/auratechhero/1200/900"
             alt="Abstract creative illustration representing Aura Tech's services"

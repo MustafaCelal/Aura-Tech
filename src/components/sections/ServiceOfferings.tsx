@@ -30,7 +30,7 @@ const services = [
 
 export function ServiceOfferings() {
   return (
-    <Container id="services" className="bg-background/70 rounded-xl backdrop-blur-sm shadow-lg">
+    <Container id="services" className="bg-background/70 rounded-xl shadow-md">
       <div className="text-center mb-12 sm:mb-16">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
           Websites for Every Vision
@@ -48,7 +48,7 @@ export function ServiceOfferings() {
           />
         ))}
         <Link href="#contact" className="h-full">
-          <Card className="h-full transform transition-all duration-300 hover:scale-105 hover:shadow-lg flex flex-col items-center justify-center p-6 text-center bg-card border-border rounded-lg cursor-pointer">
+          <Card className="h-full transform transition-all duration-300 hover:scale-105 hover:shadow-md flex flex-col items-center justify-center p-6 text-center bg-card border border-border rounded-lg cursor-pointer">
             <ArrowRight className="w-10 h-10 sm:w-12 sm:h-12 text-primary mb-4" />
             <h3 className="text-base sm:text-lg font-medium text-foreground">Yours</h3>
           </Card>
@@ -57,3 +57,4 @@ export function ServiceOfferings() {
     </Container>
   );
 }
+

@@ -1,7 +1,8 @@
+
 "use client";
 
-import { useEffect, useActionState } from 'react'; // Changed useFormState to useActionState
-import { useFormStatus } from 'react-dom'; // useFormStatus is imported from react-dom
+import { useEffect, useActionState } from 'react'; 
+import { useFormStatus } from 'react-dom'; 
 import { submitContactForm, type ContactFormState } from '@/app/actions';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -63,7 +64,7 @@ export function ContactForm() {
   return (
     <Container id="contact" className="bg-primary/5 rounded-xl">
       <div className="max-w-2xl mx-auto">
-        <Card className="shadow-xl">
+        <Card className="shadow-lg">
           <CardHeader className="text-center">
             <CardTitle className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">Get In Touch</CardTitle>
             <CardDescription className="mt-2 text-lg text-muted-foreground">
@@ -106,3 +107,4 @@ export function ContactForm() {
     </Container>
   );
 }
+

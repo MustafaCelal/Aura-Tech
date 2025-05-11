@@ -10,7 +10,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({ imageUrl, title, category, aiHint }: ProjectCardProps) {
   return (
-    <Card className="overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl group">
+    <Card className="overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-lg group">
       <CardContent className="p-0">
         <div className="relative aspect-video">
           <Image
@@ -30,3 +30,4 @@ export function ProjectCard({ imageUrl, title, category, aiHint }: ProjectCardPr
     </Card>
   );
 }
+

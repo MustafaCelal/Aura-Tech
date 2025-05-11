@@ -1,7 +1,8 @@
+
 "use client";
 
 import { useState } from 'react';
-// import { generateHeadline, type GenerateHeadlineInput, type GenerateHeadlineOutput } from '@/ai/flows/generate-headline';
+import { generateHeadline, type GenerateHeadlineInput, type GenerateHeadlineOutput } from '@/ai/flows/generate-headline';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -9,26 +10,16 @@ import { Container } from '@/components/layout/Container';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Sparkles, Loader2 } from 'lucide-react';
 
-// Mock GenerateHeadlineInput and GenerateHeadlineOutput types if the import is commented out
-interface GenerateHeadlineInput {
-  topic: string;
-  tone: string;
-}
-
-interface GenerateHeadlineOutput {
-  headlines: string[];
-}
-
 
 export function AiHeadlineTool() {
   const [topic, setTopic] = useState('');
   const [tone, setTone] = useState('');
   const [headlines, setHeadlines] = useState<string[]>([
-    'Discover the Future of Innovation',
-    'Unlock Your Creative Potential Today',
-    'Revolutionary Ideas for a Changing World',
-    'The Secret to Engaging Content is Here',
-    'Transform Your Vision into Reality',
+    'Headline 1',
+    'Headline 2',
+    'Headline 3',
+    'Headline 4',
+    'Headline 5',
   ]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -54,13 +45,13 @@ export function AiHeadlineTool() {
       if (topic || tone) {
         setHeadlines(mockHeadlines);
       } else {
-        setHeadlines([
-          'Explore Compelling Headline Ideas',
-          'Fresh Perspectives for Your Content',
-          'Innovative Headlines Generated for You',
-          'Spark Creativity with New Titles',
-          'Your Next Great Headline Starts Here',
-        ]);
+         setHeadlines([
+            'Headline 1',
+            'Headline 2',
+            'Headline 3',
+            'Headline 4',
+            'Headline 5',
+          ]);
       }
       setIsLoading(false);
     }, 1500);
@@ -79,7 +70,7 @@ export function AiHeadlineTool() {
 
   return (
     <Container id="ai-tool">
-      <Card className="max-w-3xl mx-auto shadow-xl">
+      <Card className="max-w-3xl mx-auto shadow-lg">
         <CardHeader className="text-center">
           <div className="flex justify-center mb-4">
             <Sparkles className="w-12 h-12 text-primary" />
@@ -150,3 +141,4 @@ export function AiHeadlineTool() {
     </Container>
   );
 }
+
