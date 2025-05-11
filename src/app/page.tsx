@@ -6,6 +6,8 @@ import { TransformingIdeasSection } from '@/components/sections/TransformingIdea
 import { ProjectShowcase } from '@/components/sections/ProjectShowcase';
 import { ContactForm } from '@/components/sections/ContactForm';
 import { AiHeadlineTool } from '@/components/sections/AiHeadlineTool';
+import { WhyChooseUsSection } from '@/components/sections/WhyChooseUsSection';
+import { FeaturesSection } from '@/components/sections/FeaturesSection';
 
 export default function Home() {
   return (
@@ -14,7 +16,9 @@ export default function Home() {
       <main>
         <HeroSection />
         <ServiceOfferings />
+        <WhyChooseUsSection />
         <TransformingIdeasSection />
+        <FeaturesSection />
         <ProjectShowcase />
         <AiHeadlineTool />
         <ContactForm />
