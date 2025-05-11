@@ -1,3 +1,4 @@
+
 import { ServiceCard } from '@/components/ServiceCard';
 import { Container } from '@/components/layout/Container';
 import {
@@ -35,7 +36,7 @@ export function ServiceOfferings() {
           We are ready to help all the needs to make products, agencies, or personalities increasingly known through websites that can be accessed anytime, anywhere. Below is a sample website that can be your inspiration.
         </p>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mb-10">
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-10">
         {services.map((service) => (
           <ServiceCard
             key={service.title}
