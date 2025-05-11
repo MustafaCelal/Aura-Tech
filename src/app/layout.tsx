@@ -1,21 +1,16 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Inter } from 'next/font/google'; // Changed from Geist
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const inter = Inter({ // Changed from geistSans and geistMono
+  variable: '--font-inter',
   subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
-  title: 'Webagency - Expand Your Business With a Website',
-  description: 'Webagency provides top-notch website solutions to expand your business and reach new heights.',
+  title: 'Aura Tech - Creative Solutions for Modern Brands', // Ensured Aura Tech
+  description: 'Aura Tech offers cutting-edge design, development, and marketing services to elevate your brand.', // Ensured Aura Tech
 };
 
 export default function RootLayout({
@@ -25,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${inter.variable} antialiased`}> {/* Changed to use Inter font variable */}
         {children}
         <Toaster />
       </body>
