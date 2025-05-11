@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { generateHeadline, type GenerateHeadlineInput, type GenerateHeadlineOutput } from '@/ai/flows/generate-headline';
+// import { generateHeadline, type GenerateHeadlineInput, type GenerateHeadlineOutput } from '@/ai/flows/generate-headline';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -9,10 +9,27 @@ import { Container } from '@/components/layout/Container';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Sparkles, Loader2 } from 'lucide-react';
 
+// Mock GenerateHeadlineInput and GenerateHeadlineOutput types if the import is commented out
+interface GenerateHeadlineInput {
+  topic: string;
+  tone: string;
+}
+
+interface GenerateHeadlineOutput {
+  headlines: string[];
+}
+
+
 export function AiHeadlineTool() {
   const [topic, setTopic] = useState('');
   const [tone, setTone] = useState('');
-  const [headlines, setHeadlines] = useState<string[]>([]);
+  const [headlines, setHeadlines] = useState<string[]>([
+    'Discover the Future of Innovation',
+    'Unlock Your Creative Potential Today',
+    'Revolutionary Ideas for a Changing World',
+    'The Secret to Engaging Content is Here',
+    'Transform Your Vision into Reality',
+  ]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -20,18 +37,44 @@ export function AiHeadlineTool() {
     e.preventDefault();
     setIsLoading(true);
     setError(null);
-    setHeadlines([]);
+    // Keep existing headlines for a moment or clear them
+    // setHeadlines([]); 
 
-    try {
-      const input: GenerateHeadlineInput = { topic, tone };
-      const result: GenerateHeadlineOutput = await generateHeadline(input);
-      setHeadlines(result.headlines);
-    } catch (err) {
-      console.error("Error generating headlines:", err);
-      setError('Failed to generate headlines. Please try again.');
-    } finally {
+    // Simulate API call
+    setTimeout(() => {
+      const mockHeadlines: string[] = [
+        `Amazing Headline for ${topic} with a ${tone} Tone!`,
+        `Another Great Idea: ${topic} in a ${tone} Style`,
+        `${tone.toUpperCase()}! ${topic} Will Never Be the Same`,
+        `Unlock ${topic}'s Potential with a ${tone} Approach`,
+        `Why ${topic} is the Next Big Thing (Hint: It's ${tone})`,
+      ];
+      
+      // If topic and tone are empty, use default, otherwise generate based on input
+      if (topic || tone) {
+        setHeadlines(mockHeadlines);
+      } else {
+        setHeadlines([
+          'Explore Compelling Headline Ideas',
+          'Fresh Perspectives for Your Content',
+          'Innovative Headlines Generated for You',
+          'Spark Creativity with New Titles',
+          'Your Next Great Headline Starts Here',
+        ]);
+      }
       setIsLoading(false);
-    }
+    }, 1500);
+
+    // try {
+    //   const input: GenerateHeadlineInput = { topic, tone };
+    //   // const result: GenerateHeadlineOutput = await generateHeadline(input);
+    //   // setHeadlines(result.headlines);
+    // } catch (err) {
+    //   console.error("Error generating headlines:", err);
+    //   setError('Failed to generate headlines. Please try again.');
+    // } finally {
+    //   // setIsLoading(false); // Moved into setTimeout for simulation
+    // }
   };
 
   return (
@@ -56,7 +99,7 @@ export function AiHeadlineTool() {
                 value={topic}
                 onChange={(e) => setTopic(e.target.value)}
                 placeholder="e.g., Sustainable Fashion, Tech Startups"
-                required
+                
                 className="mt-1"
               />
             </div>
@@ -68,7 +111,7 @@ export function AiHeadlineTool() {
                 value={tone}
                 onChange={(e) => setTone(e.target.value)}
                 placeholder="e.g., Professional, Playful, Urgent"
-                required
+                
                 className="mt-1"
               />
             </div>
