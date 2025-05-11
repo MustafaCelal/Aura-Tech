@@ -2,7 +2,7 @@
 "use client";
 
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import {
@@ -17,9 +17,16 @@ import { Container } from '@/components/layout/Container';
 export function HeroSection() {
   const [heroName, setHeroName] = useState('');
   const [heroWebsiteType, setHeroWebsiteType] = useState('');
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
 
   const handleHeroSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (!isMounted) return;
 
     const contactSection = document.getElementById('contact');
     if (contactSection) {
@@ -32,25 +39,29 @@ export function HeroSection() {
 
         if (nameInput && heroName) {
           nameInput.value = heroName;
+          // Dispatch input event for React Hook Form or other libraries to pick up the change
           nameInput.dispatchEvent(new Event('input', { bubbles: true }));
+
         }
 
         if (messageTextarea && heroWebsiteType) {
           const currentMessage = messageTextarea.value;
-          messageTextarea.value = `Interested in: ${heroWebsiteType}\n--------------------------\n${currentMessage}`;
+          const newFormattedMessage = `Interested in: ${heroWebsiteType}\n--------------------------\n${currentMessage}`;
+          messageTextarea.value = newFormattedMessage;
           messageTextarea.dispatchEvent(new Event('input', { bubbles: true }));
+
         }
         
         if (emailInput) {
           emailInput.focus();
-        } else if (nameInput && !heroName) { // If email not found, focus name if empty
+        } else if (nameInput && !heroName) { 
            nameInput.focus();
-        } else if (messageTextarea && !heroWebsiteType) { // Else focus message if type not set
+        } else if (messageTextarea && !heroWebsiteType) { 
             messageTextarea.focus();
         }
 
 
-      }, 100); 
+      }, 100); // Small delay to ensure scroll is complete
     }
   };
 
@@ -65,17 +76,17 @@ export function HeroSection() {
           We craft stunning digital experiences and innovative marketing strategies that captivate audiences and drive growth. Discover your brand's true potential.
         </p>
         
-        <div className="mt-10 bg-card p-3 sm:p-4 rounded-xl shadow-xl border">
+        <div className="mt-10 bg-card p-1.5 sm:p-2 rounded-xl shadow-xl border border-border/20">
           <form 
             onSubmit={handleHeroSubmit} 
-            className="flex flex-col sm:flex-row items-stretch gap-2 sm:gap-0 sm:rounded-lg sm:shadow-inner sm:overflow-hidden bg-input"
+            className="flex flex-col sm:flex-row items-stretch gap-0 sm:rounded-lg sm:shadow-inner sm:overflow-hidden bg-background sm:border sm:border-input"
           >
             <Input
               type="text"
               id="heroNameInput"
               placeholder="Your Name"
               aria-label="Your Name"
-              className="h-14 text-base sm:rounded-none sm:border-0 sm:border-r sm:border-border/30 focus:ring-0 focus:border-primary flex-grow placeholder:text-muted-foreground text-muted-foreground bg-transparent px-4"
+              className="h-14 text-base sm:rounded-none sm:border-0 sm:border-r sm:border-border/30 focus:ring-0 focus:border-primary flex-grow placeholder:text-muted-foreground/70 text-foreground bg-transparent px-4"
               value={heroName}
               onChange={(e) => setHeroName(e.target.value)}
             />
@@ -83,7 +94,7 @@ export function HeroSection() {
               <SelectTrigger
                 id="heroWebsiteType"
                 aria-label="Website Type"
-                className="h-14 text-base sm:rounded-none sm:border-0 data-[state=open]:ring-0 data-[state=open]:border-primary min-w-[180px] sm:min-w-0 sm:flex-grow text-muted-foreground bg-transparent px-4"
+                className="h-14 text-base sm:rounded-none sm:border-0 data-[state=open]:ring-0 data-[state=open]:border-primary min-w-[180px] sm:min-w-0 sm:flex-grow placeholder:text-muted-foreground/70 text-foreground bg-transparent px-4 border-t border-b sm:border-t-0 sm:border-b-0 border-border/30"
               >
                 <SelectValue placeholder="Website Type" />
               </SelectTrigger>
@@ -99,7 +110,7 @@ export function HeroSection() {
             <Button
               size="lg"
               type="submit"
-              className="h-14 text-base sm:rounded-none shrink-0"
+              className="h-14 text-base sm:rounded-l-none shrink-0"
             >
               Get Started
             </Button>
@@ -118,7 +129,7 @@ export function HeroSection() {
             data-ai-hint="abstract technology"
             priority
           />
-           <div aria-hidden="true" className="absolute inset-0 rounded-xl ring-1 ring-inset ring-black/10"></div>
+           <div aria-hidden="true" className="absolute inset-0 rounded-xl ring-1 ring-inset ring-foreground/5"></div>
         </div>
       </div>
     </Container>
