@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-import { Toaster } from "@/components/ui/toaster"; // Added for contact form notifications
+import { Toaster } from "@/components/ui/toaster";
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Aura Tech - Creative Solutions for Modern Brands',
-  description: 'Aura Tech offers cutting-edge design, development, and marketing services to elevate your brand.',
+  title: 'Webagency - Expand Your Business With a Website',
+  description: 'Webagency provides top-notch website solutions to expand your business and reach new heights.',
 };
 
 export default function RootLayout({

@@ -8,7 +8,7 @@ body {
 
 @layer base {
   :root {
-    --background: 200 50% 97%; /* Light cool gray, serves as a base for elements not on gradient */
+    --background: 0 0% 100%; /* White */
     --foreground: 224 71.4% 10.1%; /* Dark blueish-gray for text */
 
     --card: 0 0% 100%; /* White cards */
@@ -17,8 +17,8 @@ body {
     --popover: 0 0% 100%;
     --popover-foreground: 224 71.4% 10.1%;
 
-    --primary: 180 100% 25.1%; /* Teal */
-    --primary-foreground: 180 25% 95.1%; /* Light color for text on primary */
+    --primary: 25 95% 53%; /* Orange */
+    --primary-foreground: 0 0% 98%; /* Almost white */
 
     --secondary: 220 14.3% 95.9%; /* Light grayish blue */
     --secondary-foreground: 220 8.9% 46.1%;
@@ -26,7 +26,7 @@ body {
     --muted: 220 14.3% 95.9%;
     --muted-foreground: 220 8.9% 46.1%; /* Lighter text for muted content */
 
-    --accent: 180 100% 25.1%; /* Teal */
+    --accent: 180 100% 25.1%; /* Teal - kept as is, can be changed if needed */
     --accent-foreground: 180 25% 95.1%;
 
     --destructive: 0 84.2% 60.2%;
@@ -34,7 +34,7 @@ body {
 
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 180 90% 35.1%; /* Teal for focus rings */
+    --ring: 25 95% 53%; /* Orange for focus rings */
 
     --radius: 0.5rem; /* For rounded corners */
   }
@@ -50,8 +50,8 @@ body {
     --popover: 224 71.4% 4.1%;
     --popover-foreground: 210 20% 98%;
 
-    --primary: 180 100% 25.1%; /* Teal */
-    --primary-foreground: 180 25% 95.1%;
+    --primary: 25 95% 53%; /* Orange */
+    --primary-foreground: 0 0% 98%; /* Almost white */
 
     --secondary: 215 27.9% 16.9%;
     --secondary-foreground: 210 20% 98%;
@@ -67,7 +67,7 @@ body {
 
     --border: 215 27.9% 16.9%;
     --input: 215 27.9% 16.9%;
-    --ring: 180 90% 35.1%;
+    --ring: 25 95% 53%; /* Orange for focus rings */
   }
 }
 
@@ -76,7 +76,7 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-gradient-to-br from-[#E0F7FA] to-[#F3E5F5] text-foreground min-h-screen flex flex-col;
+    @apply bg-background text-foreground min-h-screen flex flex-col; /* Changed to bg-background */
   }
   main {
     @apply flex-grow;
