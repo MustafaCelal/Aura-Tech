@@ -1,3 +1,4 @@
+
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { HeroSection } from '@/components/sections/HeroSection';
@@ -8,6 +9,7 @@ import { ContactForm } from '@/components/sections/ContactForm';
 import { AiHeadlineTool } from '@/components/sections/AiHeadlineTool';
 import { WhyChooseUsSection } from '@/components/sections/WhyChooseUsSection';
 import { FeaturesSection } from '@/components/sections/FeaturesSection';
+import { TestimonialSection } from '@/components/sections/TestimonialSection';
 
 export default function Home() {
   return (
@@ -20,6 +22,7 @@ export default function Home() {
         <TransformingIdeasSection />
         <FeaturesSection />
         <ProjectShowcase />
+        <TestimonialSection />
         <AiHeadlineTool />
         <ContactForm />
       </main>
