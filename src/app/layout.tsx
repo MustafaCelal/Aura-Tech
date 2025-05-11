@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Aura Agency - Creative Solutions for Modern Brands',
-  description: 'Aura Agency offers cutting-edge design, development, and marketing services to elevate your brand.',
+  title: 'Aura Tech - Creative Solutions for Modern Brands',
+  description: 'Aura Tech offers cutting-edge design, development, and marketing services to elevate your brand.',
 };
 
 export default function RootLayout({

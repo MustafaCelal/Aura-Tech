@@ -8,7 +8,7 @@ export function HeroSection() {
     <Container className="flex flex-col lg:flex-row items-center gap-12 !pt-12 sm:!pt-16 lg:!pt-20">
       <div className="lg:w-1/2 lg:pr-10 text-center lg:text-left">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-foreground leading-tight">
-          Elevate Your Brand with <span className="text-primary">Aura Agency</span>
+          Elevate Your Brand with <span className="text-primary">Aura Tech</span>
         </h1>
         <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0">
           We craft stunning digital experiences and innovative marketing strategies that captivate audiences and drive growth. Discover your brand's true potential.
@@ -25,8 +25,8 @@ export function HeroSection() {
       <div className="lg:w-1/2 mt-10 lg:mt-0">
         <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-2xl">
           <Image
-            src="https://picsum.photos/seed/aurahero/1200/900"
-            alt="Abstract creative illustration representing Aura Agency's services"
+            src="https://picsum.photos/seed/auratechhero/1200/900"
+            alt="Abstract creative illustration representing Aura Tech's services"
             layout="fill"
             objectFit="cover"
             className="transform transition-transform duration-500 hover:scale-105"

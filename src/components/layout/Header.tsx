@@ -17,7 +17,7 @@ export function Header() {
         <Link href="/" className="flex items-center gap-2" prefetch={false}>
           <Feather className="h-7 w-7 text-primary" />
           <span className="text-xl font-bold tracking-tight text-foreground">
-            Aura Agency
+            Aura Tech
           </span>
         </Link>
         <nav className="hidden md:flex gap-6 items-center">
@@ -44,7 +44,7 @@ export function Header() {
               <Link href="/" className="flex items-center gap-2 mb-4" prefetch={false}>
                 <Feather className="h-7 w-7 text-primary" />
                 <span className="text-xl font-bold tracking-tight text-foreground">
-                  Aura Agency
+                  Aura Tech
                 </span>
               </Link>
               {navLinks.map((link) => (
