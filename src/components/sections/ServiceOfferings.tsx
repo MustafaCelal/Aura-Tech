@@ -50,14 +50,8 @@ export function ServiceOfferings() {
         <Link href="#contact" className="h-full">
           <Card className="h-full transform transition-all duration-300 hover:scale-105 hover:shadow-lg flex flex-col items-center justify-center p-6 text-center bg-card border-border rounded-lg cursor-pointer">
             <ArrowRight className="w-10 h-10 sm:w-12 sm:h-12 text-primary mb-4" />
-            <h3 className="text-base sm:text-lg font-medium text-foreground">See all</h3>
+            <h3 className="text-base sm:text-lg font-medium text-foreground">Yours</h3>
           </Card>
-        </Link>
-      </div>
-      <div className="flex justify-center">
-        <Link href="#contact" className="inline-flex items-center text-primary hover:text-primary/80 transition-colors font-medium text-base sm:text-lg group">
-          Discuss Your Project
-          <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:translate-x-1" />
         </Link>
       </div>
     </Container>

@@ -1,4 +1,8 @@
+
+"use client";
+
 import Image from 'next/image';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import {
@@ -11,6 +15,40 @@ import {
 import { Container } from '@/components/layout/Container';
 
 export function HeroSection() {
+  const [heroName, setHeroName] = useState('');
+  const [heroWebsiteType, setHeroWebsiteType] = useState('');
+
+  const handleHeroSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      // A short delay can help ensure elements are ready after scroll, especially if there are transitions.
+      setTimeout(() => {
+        const nameInput = document.getElementById('name') as HTMLInputElement | null;
+        const emailInput = document.getElementById('email') as HTMLInputElement | null;
+        const messageTextarea = document.getElementById('message') as HTMLTextAreaElement | null;
+
+        if (nameInput && heroName) {
+          nameInput.value = heroName;
+          // Dispatch an input event to ensure any listeners (e.g., from form libraries if used) are notified.
+          nameInput.dispatchEvent(new Event('input', { bubbles: true }));
+        }
+
+        if (messageTextarea && heroWebsiteType) {
+          messageTextarea.value = `Interested in: ${heroWebsiteType}\n--------------------------\n`;
+           messageTextarea.dispatchEvent(new Event('input', { bubbles: true }));
+        }
+
+        if (emailInput) {
+          emailInput.focus();
+        }
+      }, 100); // Adjust delay if needed, or use a more robust method for waiting for element availability
+    }
+  };
+
   return (
     <Container className="flex flex-col lg:flex-row items-center gap-12 !pt-12 sm:!pt-16 lg:!pt-20">
       <div className="lg:w-1/2 lg:pr-10 text-center lg:text-left">
@@ -22,29 +60,32 @@ export function HeroSection() {
           We craft stunning digital experiences and innovative marketing strategies that captivate audiences and drive growth. Discover your brand's true potential.
         </p>
         
-        <div className="mt-10">
-          <form className="flex flex-col sm:flex-row items-stretch gap-2 sm:gap-0 sm:rounded-lg sm:shadow-lg sm:overflow-hidden sm:border sm:border-input">
+        <div className="mt-10 bg-card p-3 sm:p-4 rounded-xl shadow-xl border">
+          <form onSubmit={handleHeroSubmit} className="flex flex-col sm:flex-row items-stretch gap-2 sm:gap-0 sm:rounded-lg sm:shadow-inner sm:overflow-hidden sm:border sm:border-input/50">
             <Input
               type="text"
-              id="heroName"
+              id="heroNameInput"
               placeholder="Your Name"
               aria-label="Your Name"
-              className="h-14 text-base sm:rounded-none sm:border-0 sm:border-r sm:border-input focus:ring-0 focus:border-primary flex-grow"
+              className="h-14 text-base sm:rounded-none sm:border-0 sm:border-r sm:border-input/50 focus:ring-0 focus:border-primary flex-grow"
+              value={heroName}
+              onChange={(e) => setHeroName(e.target.value)}
             />
-            <Select>
+            <Select value={heroWebsiteType} onValueChange={setHeroWebsiteType}>
               <SelectTrigger
                 id="heroWebsiteType"
                 aria-label="Website Type"
-                className="h-14 text-base sm:rounded-none sm:border-0 data-[state=open]:ring-0 data-[state=open]:border-primary min-w-[180px] sm:min-w-0 sm:flex-grow"
+                className="h-14 text-base sm:rounded-none sm:border-0 data-[state=open]:ring-0 data-[state=open]:border-primary min-w-[180px] sm:min-w-0 sm:flex-grow text-muted-foreground"
               >
                 <SelectValue placeholder="Website Type" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="ecommerce">E-commerce</SelectItem>
-                <SelectItem value="portfolio">Portfolio</SelectItem>
-                <SelectItem value="blog">Blog</SelectItem>
-                <SelectItem value="business">Business Website</SelectItem>
-                <SelectItem value="landing_page">Landing Page</SelectItem>
+                <SelectItem value="Business Website">Business Website</SelectItem>
+                <SelectItem value="Landing Page">Landing Page</SelectItem>
+                <SelectItem value="Portfolio">Portfolio</SelectItem>
+                <SelectItem value="Blog">Blog</SelectItem>
+                <SelectItem value="E-commerce">E-commerce</SelectItem>
+                <SelectItem value="Custom Solution">Custom Solution</SelectItem>
               </SelectContent>
             </Select>
             <Button
@@ -56,23 +97,15 @@ export function HeroSection() {
             </Button>
           </form>
         </div>
-
-        <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-          <Button asChild size="lg" className="text-base">
-            <a href="#contact">Get Started</a>
-          </Button>
-          <Button asChild variant="outline" size="lg" className="text-base">
-            <a href="#projects">Our Work</a>
-          </Button>
-        </div>
       </div>
       <div className="lg:w-1/2 mt-10 lg:mt-0">
         <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-2xl">
           <Image
             src="https://picsum.photos/seed/auratechhero/1200/900"
             alt="Abstract creative illustration representing Aura Tech's services"
-            layout="fill"
-            objectFit="cover"
+            fill // Changed from layout="fill" for Next 13+
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            style={{ objectFit: "cover" }} // Changed from objectFit="cover"
             className="transform transition-transform duration-500 hover:scale-105"
             data-ai-hint="abstract technology"
             priority
