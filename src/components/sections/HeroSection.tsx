@@ -25,7 +25,6 @@ export function HeroSection() {
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-      // A short delay can help ensure elements are ready after scroll, especially if there are transitions.
       setTimeout(() => {
         const nameInput = document.getElementById('name') as HTMLInputElement | null;
         const emailInput = document.getElementById('email') as HTMLInputElement | null;
@@ -33,19 +32,25 @@ export function HeroSection() {
 
         if (nameInput && heroName) {
           nameInput.value = heroName;
-          // Dispatch an input event to ensure any listeners (e.g., from form libraries if used) are notified.
           nameInput.dispatchEvent(new Event('input', { bubbles: true }));
         }
 
         if (messageTextarea && heroWebsiteType) {
-          messageTextarea.value = `Interested in: ${heroWebsiteType}\n--------------------------\n`;
-           messageTextarea.dispatchEvent(new Event('input', { bubbles: true }));
+          const currentMessage = messageTextarea.value;
+          messageTextarea.value = `Interested in: ${heroWebsiteType}\n--------------------------\n${currentMessage}`;
+          messageTextarea.dispatchEvent(new Event('input', { bubbles: true }));
         }
-
+        
         if (emailInput) {
           emailInput.focus();
+        } else if (nameInput && !heroName) { // If email not found, focus name if empty
+           nameInput.focus();
+        } else if (messageTextarea && !heroWebsiteType) { // Else focus message if type not set
+            messageTextarea.focus();
         }
-      }, 100); // Adjust delay if needed, or use a more robust method for waiting for element availability
+
+
+      }, 100); 
     }
   };
 
@@ -61,13 +66,16 @@ export function HeroSection() {
         </p>
         
         <div className="mt-10 bg-card p-3 sm:p-4 rounded-xl shadow-xl border">
-          <form onSubmit={handleHeroSubmit} className="flex flex-col sm:flex-row items-stretch gap-2 sm:gap-0 sm:rounded-lg sm:shadow-inner sm:overflow-hidden sm:border sm:border-input/50">
+          <form 
+            onSubmit={handleHeroSubmit} 
+            className="flex flex-col sm:flex-row items-stretch gap-2 sm:gap-0 sm:rounded-lg sm:shadow-inner sm:overflow-hidden bg-input"
+          >
             <Input
               type="text"
               id="heroNameInput"
               placeholder="Your Name"
               aria-label="Your Name"
-              className="h-14 text-base sm:rounded-none sm:border-0 sm:border-r sm:border-input/50 focus:ring-0 focus:border-primary flex-grow"
+              className="h-14 text-base sm:rounded-none sm:border-0 sm:border-r sm:border-border/30 focus:ring-0 focus:border-primary flex-grow placeholder:text-muted-foreground text-muted-foreground bg-transparent px-4"
               value={heroName}
               onChange={(e) => setHeroName(e.target.value)}
             />
@@ -75,7 +83,7 @@ export function HeroSection() {
               <SelectTrigger
                 id="heroWebsiteType"
                 aria-label="Website Type"
-                className="h-14 text-base sm:rounded-none sm:border-0 data-[state=open]:ring-0 data-[state=open]:border-primary min-w-[180px] sm:min-w-0 sm:flex-grow text-muted-foreground"
+                className="h-14 text-base sm:rounded-none sm:border-0 data-[state=open]:ring-0 data-[state=open]:border-primary min-w-[180px] sm:min-w-0 sm:flex-grow text-muted-foreground bg-transparent px-4"
               >
                 <SelectValue placeholder="Website Type" />
               </SelectTrigger>
@@ -103,9 +111,9 @@ export function HeroSection() {
           <Image
             src="https://picsum.photos/seed/auratechhero/1200/900"
             alt="Abstract creative illustration representing Aura Tech's services"
-            fill // Changed from layout="fill" for Next 13+
+            fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            style={{ objectFit: "cover" }} // Changed from objectFit="cover"
+            style={{ objectFit: "cover" }}
             className="transform transition-transform duration-500 hover:scale-105"
             data-ai-hint="abstract technology"
             priority
@@ -116,3 +124,4 @@ export function HeroSection() {
     </Container>
   );
 }
+
