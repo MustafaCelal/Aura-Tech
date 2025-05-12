@@ -4,73 +4,73 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%; /* Very light gray, almost white */
-    --foreground: 220 15% 25%; /* Dark cool gray */
+    --background: 0 0% 98%; /* Almost white, e.g., #FAF9F9 */
+    --foreground: 220 15% 25%; /* Dark cool gray, e.g., #353B48 */
 
     --card: 0 0% 100%; /* White */
-    --card-foreground: 220 15% 25%;
+    --card-foreground: 220 15% 25%; /* Dark cool gray */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 25%;
+    --popover: 0 0% 100%; /* White */
+    --popover-foreground: 220 15% 25%; /* Dark cool gray */
 
-    --primary: 210 100% 50%; /* A vibrant blue */
+    --primary: 210 100% 50%; /* Aura Tech Blue - Vibrant, e.g., #007FFF */
     --primary-foreground: 0 0% 100%; /* White */
 
-    --secondary: 210 100% 95%; /* Very light blue */
-    --secondary-foreground: 210 100% 30%; /* Darker blue for text on secondary bg */
+    --secondary: 210 60% 95%; /* Very light desaturated blue, e.g., #EEF4FA */
+    --secondary-foreground: 210 60% 35%; /* Darker blue for text on secondary, e.g., #3D6A9A */
 
-    --muted: 220 15% 90%; /* Light gray */
-    --muted-foreground: 220 15% 45%; /* Medium gray */
+    --muted: 220 10% 92%; /* Lighter gray, e.g., #E9EAEB */
+    --muted-foreground: 220 10% 55%; /* Medium gray, e.g., #7F838A */
 
-    --accent: 210 100% 50%; /* Same as primary for simplicity */
-    --accent-foreground: 0 0% 100%; /* White */
+    --accent: 16 95% 60%; /* Coral, e.g., #FD8A5F */
+    --accent-foreground: 0 0% 10%; /* Dark text for accent, e.g., #1A1A1A */
 
-    --destructive: 0 70% 55%; /* Standard Red */
-    --destructive-foreground: 0 0% 100%; /* White */
+    --destructive: 0 72% 51%; /* Darker Red for better contrast, e.g., #C83E3E */
+    --destructive-foreground: 0 0% 98%; /* Off-white */
 
-    --border: 220 15% 88%; /* Light gray border */
-    --input: 220 15% 94%; /* Slightly off-white for input backgrounds */
-    --ring: 210 100% 55%; /* Blue for focus rings */
+    --border: 220 10% 88%; /* Light gray border, e.g., #DCDDE0 */
+    --input: 220 10% 95%; /* Slightly off-white for input backgrounds, e.g., #F0F1F2 */
+    --ring: 210 100% 55%; /* Aura Tech Blue - slightly lighter for focus, e.g., #1A8CFF */
 
     --radius: 0.5rem;
 
     /* Gradient colors for body */
-    --gradient-start: 0 0% 98%; /* Very light gray */
-    --gradient-end: 210 100% 97%; /* Very subtle hint of light blue */
+    --gradient-start: 0 0% 98%; /* Match background */
+    --gradient-end: 210 60% 97%; /* Subtle hint of very light desaturated blue */
   }
 
   .dark {
-    --background: 220 15% 10%;  /* Very dark cool gray */
-    --foreground: 0 0% 95%;  /* Light gray / off-white */
+    --background: 220 15% 10%;  /* Very dark cool gray, e.g., #14161A */
+    --foreground: 0 0% 95%;  /* Light gray / off-white, e.g., #F2F2F2 */
 
-    --card: 220 15% 15%;  /* Darker cool gray for cards */
-    --card-foreground: 0 0% 95%;
+    --card: 220 15% 15%;  /* Darker cool gray for cards, e.g., #21262D */
+    --card-foreground: 0 0% 95%; /* Light gray / off-white */
 
-    --popover: 220 15% 12%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 220 15% 12%; /* Darker popover, e.g., #1A1D21 */
+    --popover-foreground: 0 0% 95%; /* Light gray / off-white */
 
-    --primary: 210 100% 55%;  /* Slightly brighter blue for dark mode */
-    --primary-foreground: 0 0% 100%;
+    --primary: 210 100% 55%;  /* Aura Tech Blue - Brighter for dark mode, e.g., #1A8CFF */
+    --primary-foreground: 0 0% 100%; /* White */
 
-    --secondary: 220 15% 20%; /* Dark gray for secondary elements */
-    --secondary-foreground: 0 0% 85%; /* Lighter gray text */
+    --secondary: 210 50% 25%; /* Dark desaturated blue, e.g., #20364D */
+    --secondary-foreground: 0 0% 85%; /* Lighter gray text, e.g., #D9D9D9 */
 
-    --muted: 220 15% 25%; /* Medium-dark gray */
-    --muted-foreground: 0 0% 70%; /* Gray text */
+    --muted: 220 10% 25%; /* Medium-dark gray, e.g., #3A3E45 */
+    --muted-foreground: 0 0% 70%; /* Gray text, e.g., #B3B3B3 */
 
-    --accent: 210 100% 55%;  /* Blue */
-    --accent-foreground: 0 0% 100%;
+    --accent: 16 90% 65%;  /* Brighter Coral for dark mode, e.g., #FC9C74 */
+    --accent-foreground: 0 0% 10%; /* Dark text for accent */
 
-    --destructive: 0 70% 50%; /* Darker Red */
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 70% 50%; /* Darker Red for dark mode, e.g., #CC3333 */
+    --destructive-foreground: 0 0% 98%; /* Off-white */
 
-    --border: 220 15% 30%; /* Dark gray border */
-    --input: 220 15% 22%;  /* Darker input bg */
-    --ring: 210 100% 60%;  /* Brighter Blue for ring */
+    --border: 220 10% 30%; /* Dark gray border, e.g., #464B54 */
+    --input: 220 10% 20%;  /* Darker input bg, e.g., #2D3038 */
+    --ring: 210 100% 60%;  /* Brighter Blue for ring, e.g., #3399FF */
     
     /* Gradient colors for dark mode body */
-    --gradient-start-dark: 220 15% 10%; /* Very dark cool gray */
-    --gradient-end-dark: 210 100% 12%; /* Subtle hint of dark blue */
+    --gradient-start-dark: 220 15% 10%; /* Match dark background */
+    --gradient-end-dark: 210 50% 12%; /* Subtle hint of dark desaturated blue */
   }
 }
 
