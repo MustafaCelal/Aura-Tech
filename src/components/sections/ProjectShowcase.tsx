@@ -1,3 +1,4 @@
+
 import { ProjectCard } from '@/components/ProjectCard';
 import { Container } from '@/components/layout/Container';
 
@@ -6,28 +7,28 @@ const projects = [
     imageUrl: 'https://picsum.photos/seed/campaign/600/450',
     title: 'Campaign',
     description: 'Developed a multi-channel marketing campaign that significantly boosted brand awareness and lead generation for a key client.',
-    aiHint: 'marketing campaign',
+    aiHint: 'digital strategy',
     href: '#contact',
   },
   {
     imageUrl: 'https://picsum.photos/seed/socialmedia/600/450',
     title: 'Social Media Promotion',
     description: 'Executed a targeted social media promotion strategy, resulting in increased engagement and follower growth for a lifestyle brand.',
-    aiHint: 'social media marketing',
+    aiHint: 'online engagement',
     href: '#contact',
   },
   {
     imageUrl: 'https://picsum.photos/seed/wedding/600/450',
     title: 'Wedding Organizer',
     description: 'Designed an elegant and user-friendly website for a premium wedding organizer, enhancing their online bookings and client communication.',
-    aiHint: 'event planning',
+    aiHint: 'corporate solution',
     href: '#contact',
   },
   {
     imageUrl: 'https://picsum.photos/seed/tripplanner/600/450',
     title: 'Trip Planner',
     description: 'Created an intuitive trip planning platform with custom features, simplifying travel arrangements for adventure seekers.',
-    aiHint: 'travel planning',
+    aiHint: 'modern app',
     href: '#contact',
   },
 ];
@@ -61,3 +62,4 @@ export function ProjectShowcase() {
     </Container>
   );
 }
+

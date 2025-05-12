@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -24,7 +25,7 @@ const testimonialsData: Testimonial[] = [
     name: 'Jerome Bell',
     role: 'Doctor',
     avatarUrl: 'https://picsum.photos/seed/jerome/100/100',
-    aiHint: 'professional man',
+    aiHint: 'corporate headshot',
   },
   {
     id: 2,
@@ -32,7 +33,7 @@ const testimonialsData: Testimonial[] = [
     name: 'Ronald Richards',
     role: 'Businessman',
     avatarUrl: 'https://picsum.photos/seed/ronald/100/100',
-    aiHint: 'smiling businessman',
+    aiHint: 'business professional',
   },
   {
     id: 3,
@@ -40,7 +41,7 @@ const testimonialsData: Testimonial[] = [
     name: 'Leslie Alexander',
     role: 'Restaurant Owner',
     avatarUrl: 'https://picsum.photos/seed/leslie/100/100',
-    aiHint: 'happy woman',
+    aiHint: 'client portrait',
   },
   {
     id: 4,
@@ -48,7 +49,7 @@ const testimonialsData: Testimonial[] = [
     name: 'Sarah Miller',
     role: 'Marketing Director',
     avatarUrl: 'https://picsum.photos/seed/sarah/100/100',
-    aiHint: 'creative professional',
+    aiHint: 'innovative leader',
   },
 ];
 
@@ -166,3 +167,4 @@ export function TestimonialSection() {
     </Container>
   );
 }
+

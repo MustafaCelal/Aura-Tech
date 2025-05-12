@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -82,7 +83,7 @@ export function FaqSection() {
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
               className="rounded-lg object-contain"
-              data-ai-hint="faq illustration"
+              data-ai-hint="clear communication"
             />
           </div>
         </div>
@@ -111,3 +112,4 @@ export function FaqSection() {
     </Container>
   );
 }
+

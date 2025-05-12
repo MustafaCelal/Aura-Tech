@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -17,7 +18,7 @@ export function TransformingIdeasSection() {
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
             className="rounded-xl object-cover shadow-lg"
-            data-ai-hint="digital checklist"
+            data-ai-hint="innovation concept"
           />
         </div>
         <div className="text-center lg:text-left lg:pl-8">
@@ -48,9 +49,10 @@ export function TransformingIdeasSection() {
             fill
             sizes="33vw"
             className="rounded-xl object-cover shadow-lg"
-            data-ai-hint="modern workspace"
+            data-ai-hint="tech workspace"
           />
       </div>
     </Container>
   );
 }
+

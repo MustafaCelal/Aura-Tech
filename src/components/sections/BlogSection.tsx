@@ -1,3 +1,4 @@
+
 import { BlogCard } from '@/components/BlogCard';
 import { Container } from '@/components/layout/Container';
 import { Button } from '@/components/ui/button';
@@ -9,7 +10,7 @@ const blogPosts = [
     date: 'Aug 15, 2024',
     title: 'The Digital Edge: Crafting User-Centric Web Experiences',
     description: 'Discover key principles for designing websites that not only look stunning but also provide intuitive and engaging user journeys, leading to higher conversion rates.',
-    aiHint: 'web design process',
+    aiHint: 'user experience',
     href: '#',
   },
   {
@@ -17,7 +18,7 @@ const blogPosts = [
     date: 'Aug 10, 2024',
     title: 'Unlocking Growth: SEO Strategies for Modern Businesses',
     description: 'Learn how effective Search Engine Optimization can elevate your brand\'s visibility, attract organic traffic, and drive sustainable business growth in today\'s competitive market.',
-    aiHint: 'seo analytics chart',
+    aiHint: 'growth data',
     href: '#',
   },
   {
@@ -25,7 +26,7 @@ const blogPosts = [
     date: 'Aug 05, 2024',
     title: 'The Power of Branding: Creating a Lasting Impression Online',
     description: 'Explore the essentials of building a strong brand identity online, from compelling visuals to consistent messaging, that resonates with your target audience.',
-    aiHint: 'brand identity moodboard',
+    aiHint: 'modern brand',
     href: '#',
   },
   {
@@ -33,7 +34,7 @@ const blogPosts = [
     date: 'Jul 28, 2024',
     title: 'Future-Proof Your Business: Embracing AI in Digital Marketing',
     description: 'Understand how Artificial Intelligence is reshaping digital marketing and how your business can leverage AI tools for smarter campaigns and enhanced customer engagement.',
-    aiHint: 'ai marketing concept',
+    aiHint: 'future tech',
     href: '#',
   },
 ];
@@ -73,3 +74,4 @@ export function BlogSection() {
     </Container>
   );
 }
+
