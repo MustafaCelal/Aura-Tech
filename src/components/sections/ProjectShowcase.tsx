@@ -5,28 +5,28 @@ const projects = [
   {
     imageUrl: 'https://picsum.photos/seed/campaign/600/450',
     title: 'Campaign',
-    description: 'We provide all technical support for your website during its active period.',
+    description: 'Developed a multi-channel marketing campaign that significantly boosted brand awareness and lead generation for a key client.',
     aiHint: 'marketing campaign',
     href: '#contact',
   },
   {
     imageUrl: 'https://picsum.photos/seed/socialmedia/600/450',
     title: 'Social Media Promotion',
-    description: 'We provide all technical support for your website during its active period.',
+    description: 'Executed a targeted social media promotion strategy, resulting in increased engagement and follower growth for a lifestyle brand.',
     aiHint: 'social media marketing',
     href: '#contact',
   },
   {
     imageUrl: 'https://picsum.photos/seed/wedding/600/450',
     title: 'Wedding Organizer',
-    description: 'We provide all technical support for your website during its active period.',
+    description: 'Designed an elegant and user-friendly website for a premium wedding organizer, enhancing their online bookings and client communication.',
     aiHint: 'event planning',
     href: '#contact',
   },
   {
     imageUrl: 'https://picsum.photos/seed/tripplanner/600/450',
     title: 'Trip Planner',
-    description: 'We provide all technical support for your website during its active period.',
+    description: 'Created an intuitive trip planning platform with custom features, simplifying travel arrangements for adventure seekers.',
     aiHint: 'travel planning',
     href: '#contact',
   },
@@ -40,10 +40,10 @@ export function ProjectShowcase() {
           PROJECT
         </span>
         <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-3">
-          Discover Our Selected Project
+          Showcasing Our Success Stories
         </h2>
         <p className="text-base text-muted-foreground max-w-2xl">
-          Every website that we build is special for our clients. We are ready to provide services from start to finish. The following is service you get:
+          Explore a selection of our recent projects that highlight our commitment to quality, innovation, and client satisfaction. Each project demonstrates our capability to deliver impactful digital solutions.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

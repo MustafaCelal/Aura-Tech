@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from 'react';
@@ -15,11 +14,8 @@ export function AiHeadlineTool() {
   const [topic, setTopic] = useState('');
   const [tone, setTone] = useState('');
   const [headlines, setHeadlines] = useState<string[]>([
-    'Headline 1',
-    'Headline 2',
-    'Headline 3',
-    'Headline 4',
-    'Headline 5',
+    // Initial placeholder, will be replaced by API or default mock
+    'Enter topic and tone to generate',
   ]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -28,44 +24,24 @@ export function AiHeadlineTool() {
     e.preventDefault();
     setIsLoading(true);
     setError(null);
-    // Keep existing headlines for a moment or clear them
+    // Clear previous headlines or show loading state
     // setHeadlines([]); 
 
-    // Simulate API call
-    setTimeout(() => {
-      const mockHeadlines: string[] = [
-        `Amazing Headline for ${topic} with a ${tone} Tone!`,
-        `Another Great Idea: ${topic} in a ${tone} Style`,
-        `${tone.toUpperCase()}! ${topic} Will Never Be the Same`,
-        `Unlock ${topic}'s Potential with a ${tone} Approach`,
-        `Why ${topic} is the Next Big Thing (Hint: It's ${tone})`,
-      ];
-      
-      // If topic and tone are empty, use default, otherwise generate based on input
-      if (topic || tone) {
-        setHeadlines(mockHeadlines);
-      } else {
-         setHeadlines([
-            'Headline 1',
-            'Headline 2',
-            'Headline 3',
-            'Headline 4',
-            'Headline 5',
-          ]);
-      }
+    try {
+      const input: GenerateHeadlineInput = { topic, tone };
+      const result: GenerateHeadlineOutput = await generateHeadline(input);
+      setHeadlines(result.headlines);
+    } catch (err) {
+      console.error("Error generating headlines:", err);
+      setError('Failed to generate headlines. Please try again.');
+      // Set default headlines on error or keep old ones
+      setHeadlines([
+        'Error: Could not generate headlines.',
+        'Please check your input or try again later.',
+      ]);
+    } finally {
       setIsLoading(false);
-    }, 1500);
-
-    // try {
-    //   const input: GenerateHeadlineInput = { topic, tone };
-    //   // const result: GenerateHeadlineOutput = await generateHeadline(input);
-    //   // setHeadlines(result.headlines);
-    // } catch (err) {
-    //   console.error("Error generating headlines:", err);
-    //   setError('Failed to generate headlines. Please try again.');
-    // } finally {
-    //   // setIsLoading(false); // Moved into setTimeout for simulation
-    // }
+    }
   };
 
   return (

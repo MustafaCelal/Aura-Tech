@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -9,32 +8,32 @@ const features = [
   {
     imageUrl: 'https://picsum.photos/seed/featureSupport/100/100',
     aiHint: 'customer support',
-    title: 'Free Support',
-    description: 'We provide all technical support for your website during its active period.',
+    title: 'Ongoing Support',
+    description: 'Receive dedicated technical assistance to ensure your website performs optimally throughout its lifecycle.',
   },
   {
     imageUrl: 'https://picsum.photos/seed/featureResponsive/100/100',
     aiHint: 'responsive design',
-    title: 'Mobile Responsive',
-    description: 'The website that we create is a user friendly website.',
+    title: 'Responsive Design',
+    description: 'Our websites deliver a seamless and intuitive user experience across all devices – desktops, tablets, and mobiles.',
   },
   {
     imageUrl: 'https://picsum.photos/seed/featureHosting/100/100',
     aiHint: 'domain hosting',
-    title: 'Domain & Hosting',
-    description: 'We provide services including for domain purchase and hosting.',
+    title: 'Domain & Hosting Solutions',
+    description: 'Simplify your launch with our integrated domain registration and reliable hosting services.',
   },
   {
     imageUrl: 'https://picsum.photos/seed/featureSEO/100/100',
     aiHint: 'seo friendly',
-    title: 'Easy to find',
-    description: 'We will provide features that make your website SEO friendly.',
+    title: 'SEO-Friendly Foundations',
+    description: 'Built with search engine optimization in mind, helping your website achieve greater visibility.',
   },
   {
     imageUrl: 'https://picsum.photos/seed/featureDesign/100/100',
     aiHint: 'design choices',
-    title: 'Design Choices',
-    description: 'The designs we offer are done by a professional team.',
+    title: 'Professional Design',
+    description: 'Benefit from bespoke designs crafted by our experienced team, tailored to reflect your brand identity.',
   },
 ];
 
@@ -49,7 +48,7 @@ export function FeaturesSection() {
           What features & services can you get?
         </h2>
         <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto">
-          Every website that we build is special for our clients. We are ready to provide services from start to finish. The following is service you get:
+          Discover the comprehensive features and services designed to make your project a success. We partner with you from concept to launch, ensuring every detail aligns with your vision.
         </p>
       </div>
 

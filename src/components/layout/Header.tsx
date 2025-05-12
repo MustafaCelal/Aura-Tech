@@ -25,7 +25,7 @@ export function Header() {
         <Link href="/" className="flex items-center gap-2" prefetch={false}>
           <WebagencyLogo />
           <span className="text-xl font-bold tracking-tight text-foreground">
-            Webagency
+            Aura Tech
           </span>
         </Link>
         
@@ -59,7 +59,7 @@ export function Header() {
               <Link href="/" className="flex items-center gap-2 mb-4" prefetch={false}>
                 <WebagencyLogo />
                 <span className="text-xl font-bold tracking-tight text-foreground">
-                  Webagency
+                  Aura Tech
                 </span>
               </Link>
               {navLinks.map((link) => (

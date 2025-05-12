@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -29,11 +28,7 @@ export function TransformingIdeasSection() {
             Your Web Agency Solution
           </h3>
           <p className="mt-6 text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0">
-            We are a dedicated team of professionals in the digital world,
-            delivering creative and innovative web solutions to meet your
-            unique needs. As an enthusiastic digital agency, we are committed
-            to empowering businesses and organizations in achieving their
-            online goals.
+            Aura Tech is a dynamic digital agency passionate about transforming your vision into tangible success. Our team of seasoned experts delivers creative and innovative web solutions, meticulously crafted to meet your unique business needs. We are committed to empowering organizations like yours to thrive in the digital landscape.
           </p>
           <Button asChild variant="link" className="mt-8 text-lg px-0 text-primary hover:text-primary/80">
             <Link href="#contact">

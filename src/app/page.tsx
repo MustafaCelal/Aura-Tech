@@ -1,4 +1,5 @@
 
+
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { HeroSection } from '@/components/sections/HeroSection';
@@ -10,6 +11,12 @@ import { AiHeadlineTool } from '@/components/sections/AiHeadlineTool';
 import { WhyChooseUsSection } from '@/components/sections/WhyChooseUsSection';
 import { FeaturesSection } from '@/components/sections/FeaturesSection';
 import { TestimonialSection } from '@/components/sections/TestimonialSection';
+import { BlogSection } from '@/components/sections/BlogSection';
+import { CtaSection } from '@/components/sections/CtaSection';
+import { FaqSection } from '@/components/sections/FaqSection';
+import { PricingSection } from '@/components/sections/PricingSection';
+import { NewsletterSection } from '@/components/sections/NewsletterSection';
+
 
 export default function Home() {
   return (
@@ -23,6 +30,11 @@ export default function Home() {
         <FeaturesSection />
         <ProjectShowcase />
         <TestimonialSection />
+        <PricingSection />
+        <BlogSection />
+        <NewsletterSection/>
+        <FaqSection />
+        <CtaSection />
         <AiHeadlineTool />
         <ContactForm />
       </main>

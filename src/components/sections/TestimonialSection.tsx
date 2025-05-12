@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -21,7 +20,7 @@ interface Testimonial {
 const testimonialsData: Testimonial[] = [
   {
     id: 1,
-    quote: "Wow what great service. I love it! It's is the most valuable business resource we have EVER purchased. We can't understand how we've been living without it.",
+    quote: "Aura Tech delivered exceptional service and results. Their work has become an invaluable asset to our business. We're amazed by the impact!",
     name: 'Jerome Bell',
     role: 'Doctor',
     avatarUrl: 'https://picsum.photos/seed/jerome/100/100',
@@ -29,7 +28,7 @@ const testimonialsData: Testimonial[] = [
   },
   {
     id: 2,
-    quote: "I can't say enough about it. Thanks for the great service. It's the perfect solution for our business. You've saved our business!",
+    quote: "The team at Aura Tech provided outstanding service and a perfect solution for our needs. Their expertise truly transformed our business operations.",
     name: 'Ronald Richards',
     role: 'Businessman',
     avatarUrl: 'https://picsum.photos/seed/ronald/100/100',
@@ -37,7 +36,7 @@ const testimonialsData: Testimonial[] = [
   },
   {
     id: 3,
-    quote: "No matter where you go, It's is the coolest, most happening thing around! Not able to tell you how happy I am with it.",
+    quote: "Working with Aura Tech has been a game-changer. Their innovative approach and dedication to our project have made us incredibly happy with the outcome.",
     name: 'Leslie Alexander',
     role: 'Restaurant Owner',
     avatarUrl: 'https://picsum.photos/seed/leslie/100/100',
@@ -45,7 +44,7 @@ const testimonialsData: Testimonial[] = [
   },
   {
     id: 4,
-    quote: "Aura Tech transformed our online presence. Their team is incredibly talented and a pleasure to work with. Highly recommended!",
+    quote: "Aura Tech completely transformed our online presence. Their team is not only incredibly talented but also a genuine pleasure to collaborate with. Highly recommended!",
     name: 'Sarah Miller',
     role: 'Marketing Director',
     avatarUrl: 'https://picsum.photos/seed/sarah/100/100',
