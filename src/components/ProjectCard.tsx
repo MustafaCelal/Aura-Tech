@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
@@ -6,9 +7,9 @@ import { ArrowRight } from 'lucide-react';
 interface ProjectCardProps {
   imageUrl: string;
   title: string;
-  description: string; // Changed from category to description
+  description: string; 
   aiHint?: string;
-  href?: string; // Added href for the "View Work" link
+  href?: string;
 }
 
 export function ProjectCard({ imageUrl, title, description, aiHint, href = "#" }: ProjectCardProps) {
@@ -18,9 +19,10 @@ export function ProjectCard({ imageUrl, title, description, aiHint, href = "#" }
         <Image
           src={imageUrl}
           alt={title}
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: 'cover' }}
           className="transition-transform duration-300 group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           data-ai-hint={aiHint || "creative project"}
         />
       </div>

@@ -21,9 +21,10 @@ export function BlogCard({ imageUrl, date, title, description, aiHint, href = "#
           <Image
             src={imageUrl}
             alt={title}
-            layout="fill"
-            objectFit="cover"
+            fill
+            style={{ objectFit: 'cover' }}
             className="transition-transform duration-300 group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             data-ai-hint={aiHint || "blog post"}
           />
         </div>
