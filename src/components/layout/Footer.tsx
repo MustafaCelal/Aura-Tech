@@ -40,7 +40,7 @@ export function Footer() {
                 Aura Tech
               </span>
             </Link>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground leading-normal">
               Bahnhofstrasse 1<br />
               8001 Zürich, Switzerland
             </p>
@@ -66,7 +66,7 @@ export function Footer() {
             <ul className="space-y-2">
               {navigationLinks.navigation.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <Link href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors leading-normal">
                     {link.label}
                   </Link>
                 </li>
@@ -80,7 +80,7 @@ export function Footer() {
             <ul className="space-y-2">
               {navigationLinks.aboutUs.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <Link href={link.href} className="text-sm text-muted-foreground hover:text-primary transition-colors leading-normal">
                     {link.label}
                   </Link>
                 </li>
@@ -93,13 +93,13 @@ export function Footer() {
             <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground mb-4">Contact</h3>
             <ul className="space-y-2">
               <li>
-                <a href="tel:+41441234567" className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors">
+                <a href="tel:+41441234567" className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors leading-normal">
                   <Phone className="h-4 w-4 mr-2 flex-shrink-0" />
                   +41 44 123 45 67
                 </a>
               </li>
               <li>
-                <a href="mailto:hello@auratech.agency" className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors break-all">
+                <a href="mailto:hello@auratech.agency" className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors break-all leading-normal">
                   <Mail className="h-4 w-4 mr-2 flex-shrink-0" />
                   hello@auratech.agency
                 </a>
@@ -109,7 +109,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-border/40 pt-8 text-center">
-          <p className="text-xs text-muted-foreground">
+          <p className="text-xs text-muted-foreground leading-normal">
             &copy; {currentYear} Aura Tech. All rights reserved.
           </p>
         </div>

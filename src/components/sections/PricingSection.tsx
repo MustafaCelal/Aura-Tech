@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -12,7 +11,7 @@ const pricingTiers = [
     name: 'Launch',
     price: 'CHF 690.– setup',
     frequency: '+ 29.–/month',
-    description: 'Ideal for Freelancers, Creatives, and New Ventures seeking a professional online start.',
+    description: 'Ideal for Freelancers, Creatives, and New Ventures seeking a professional online start with essential features and reliable support.',
     features: [
       '1-Page Professional Website',
       'SEO-Ready Structure',
@@ -28,7 +27,7 @@ const pricingTiers = [
     name: 'Professional',
     price: 'CHF 990.– setup',
     frequency: '+ 39.–/month',
-    description: 'Perfect for Local Shops, Therapists, and Coaches needing more features and content.',
+    description: 'Perfect for Local Shops, Therapists, and Coaches needing more content depth, CMS capabilities, and integrations.',
     features: [
       'Up to 3 Pages',
       'Advanced SEO Optimization',
@@ -44,12 +43,13 @@ const pricingTiers = [
     name: 'Scale',
     price: 'CHF 1,490.– setup',
     frequency: '+ 79.–/month',
-    description: 'Designed for Small Agencies and Service Providers aiming for growth and flexibility.',
+    description: 'Designed for Small Agencies and Service Providers aiming for growth, offering modularity and strategic insights.',
     features: [
       'Modular Pages (Expansion Option)',
-      'Includes all the features of the Professional plan',
+      'Includes all features of Professional',
       'Growth Suggestions Report',
-      'Catalog-Ready CMS for Products or Services',
+      'Catalog-Ready CMS',
+      'Priority Support',
     ],
     cta: 'Select Scale',
     href: '#contact',
@@ -59,7 +59,7 @@ const pricingTiers = [
     name: 'Enterprise',
     price: 'Custom Quote',
     frequency: '',
-    description: 'Bespoke solutions for E-commerce, Corporates, and SaaS with unique requirements.',
+    description: 'Bespoke solutions for E-commerce, Corporates, and SaaS platforms with unique, complex requirements and dedicated support.',
     features: [
       'Tailored Web Architecture',
       'Custom APIs & Admin Panel',
@@ -104,7 +104,7 @@ export function PricingSection() {
                 <span className="text-3xl font-extrabold tracking-tight text-foreground block">{tier.price}</span>
                 {tier.frequency && <span className="text-lg font-medium text-muted-foreground block">{tier.frequency}</span>}
               </div>
-              <CardDescription className="mt-3 text-sm text-muted-foreground h-16 sm:h-20"> {/* Adjusted height for better consistency */}
+              <CardDescription className="mt-3 text-sm text-muted-foreground h-20 sm:h-24">
                 {tier.description}
               </CardDescription>
             </CardHeader>
@@ -119,7 +119,12 @@ export function PricingSection() {
               </ul>
             </CardContent>
             <CardFooter className="mt-auto p-6">
-              <Button asChild size="lg" className={`w-full ${tier.featured ? '' : 'variant-outline'}`}>
+              <Button
+                asChild
+                size="lg"
+                variant={tier.featured ? 'default' : 'outline'}
+                className="w-full"
+              >
                 <Link href={tier.href}>{tier.cta}</Link>
               </Button>
             </CardFooter>

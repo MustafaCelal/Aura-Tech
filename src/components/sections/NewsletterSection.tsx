@@ -70,7 +70,7 @@ export function NewsletterSection() {
         
         {subscribed ? (
           <p className="text-lg text-green-600 dark:text-green-400 py-4 px-6 bg-green-500/10 rounded-md">
-            Thank you for subscribing! You're now on our list.
+            Thank you for subscribing! You&apos;re now on our list.
           </p>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 items-start max-w-md mx-auto">
@@ -87,7 +87,7 @@ export function NewsletterSection() {
                 className={`h-12 text-base w-full ${error ? 'border-destructive focus:ring-destructive' : 'focus:ring-primary'}`}
                 disabled={isLoading}
               />
-              {error && <p className="text-xs text-destructive mt-1 text-left">{error}</p>}
+              {error && <p className="text-xs text-destructive mt-1 text-left leading-normal">{error}</p>}
             </div>
             <Button type="submit" size="lg" className="w-full sm:w-auto shrink-0 h-12" disabled={isLoading}>
               {isLoading ? (
@@ -102,7 +102,7 @@ export function NewsletterSection() {
           </form>
         )}
         
-        <p className="text-xs text-muted-foreground mt-6">
+        <p className="text-xs text-muted-foreground mt-6 leading-normal">
           We respect your privacy. Unsubscribe at any time. No spam!
         </p>
       </div>

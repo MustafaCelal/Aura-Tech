@@ -77,25 +77,25 @@ export function ContactForm() {
                 <Label htmlFor="name">Full Name</Label>
                 <Input id="name" name="name" type="text" placeholder="Your Name" required className="mt-1" />
                 {formState?.errors?.name && (
-                  <p className="text-sm text-destructive mt-1">{formState.errors.name.join(', ')}</p>
+                  <p className="text-sm text-destructive mt-1 leading-normal">{formState.errors.name.join(', ')}</p>
                 )}
               </div>
               <div>
                 <Label htmlFor="email">Email Address</Label>
                 <Input id="email" name="email" type="email" placeholder="you@example.com" required className="mt-1" />
                  {formState?.errors?.email && (
-                  <p className="text-sm text-destructive mt-1">{formState.errors.email.join(', ')}</p>
+                  <p className="text-sm text-destructive mt-1 leading-normal">{formState.errors.email.join(', ')}</p>
                 )}
               </div>
               <div>
                 <Label htmlFor="message">Message</Label>
                 <Textarea id="message" name="message" placeholder="Your message..." rows={5} required className="mt-1" />
                 {formState?.errors?.message && (
-                  <p className="text-sm text-destructive mt-1">{formState.errors.message.join(', ')}</p>
+                  <p className="text-sm text-destructive mt-1 leading-normal">{formState.errors.message.join(', ')}</p>
                 )}
               </div>
                {formState?.errors?._form && (
-                  <p className="text-sm text-destructive mt-1">{formState.errors._form.join(', ')}</p>
+                  <p className="text-sm text-destructive mt-1 leading-normal">{formState.errors._form.join(', ')}</p>
                 )}
               <div className="text-center sm:text-right">
                 <SubmitButton />
@@ -107,4 +107,3 @@ export function ContactForm() {
     </Container>
   );
 }
-

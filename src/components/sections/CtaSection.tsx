@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from 'next/link';
@@ -15,10 +16,10 @@ export function CtaSection() {
         <p className="text-lg sm:text-xl mb-8 opacity-90">
           Let's discuss how Aura Tech can help you achieve your digital goals. Whether it's a new website, a marketing campaign, or innovative tech solutions, we're here to bring your vision to life.
         </p>
-        <Button 
-          asChild 
-          variant="secondary" 
-          size="lg" 
+        <Button
+          asChild
+          variant="secondary"
+          size="lg"
           className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 shadow-md transition-transform hover:scale-105"
         >
           <Link href="#contact" className="flex items-center">
@@ -29,3 +30,4 @@ export function CtaSection() {
     </Container>
   );
 }
+

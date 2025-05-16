@@ -1,16 +1,18 @@
+
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google'; // Changed from Geist
+import { Inter } from 'next/font/google';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
-const inter = Inter({ // Changed from geistSans and geistMono
+const inter = Inter({ 
   variable: '--font-inter',
-  subsets: ['latin'],
+  subsets: ['latin', 'latin-ext'],
 });
 
 export const metadata: Metadata = {
-  title: 'Aura Tech - Creative Solutions for Modern Brands', // Ensured Aura Tech
-  description: 'Aura Tech offers cutting-edge design, development, and marketing services to elevate your brand.', // Ensured Aura Tech
+  title: 'Aura Agency - Creative Solutions for Modern Brands',
+  description: 'Aura Agency offers cutting-edge design, development, and marketing services to elevate your brand.',
+  // icons: null, // Explicitly disable automatic icon handling - Removed this line
 };
 
 export default function RootLayout({
@@ -20,10 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}> {/* Changed to use Inter font variable */}
+      <body className={`${inter.variable} antialiased bg-gradient-to-br from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] dark:from-[hsl(var(--gradient-start-dark))] dark:to-[hsl(var(--gradient-end-dark))] text-foreground`}> 
         {children}
         <Toaster />
       </body>
     </html>
   );
 }
+
