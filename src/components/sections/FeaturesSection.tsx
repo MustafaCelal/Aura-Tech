@@ -7,31 +7,31 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const features = [
   {
-    imageUrl: 'https://picsum.photos/seed/featureSupport/100/100',
+    imageUrl: 'https://placehold.co/100x100.png',
     aiHint: 'professional support',
     title: 'Ongoing Support',
     description: 'Receive dedicated technical assistance to ensure your website performs optimally throughout its lifecycle.',
   },
   {
-    imageUrl: 'https://picsum.photos/seed/featureResponsive/100/100',
+    imageUrl: 'https://placehold.co/100x100.png',
     aiHint: 'modern interface',
     title: 'Responsive Design',
     description: 'Our websites deliver a seamless and intuitive user experience across all devices – desktops, tablets, and mobiles.',
   },
   {
-    imageUrl: 'https://picsum.photos/seed/featureHosting/100/100',
+    imageUrl: 'https://placehold.co/100x100.png',
     aiHint: 'secure tech',
     title: 'Domain & Hosting Solutions',
     description: 'Simplify your launch with our integrated domain registration and reliable hosting services.',
   },
   {
-    imageUrl: 'https://picsum.photos/seed/featureSEO/100/100',
+    imageUrl: 'https://placehold.co/100x100.png',
     aiHint: 'growth chart',
     title: 'SEO-Friendly Foundations',
     description: 'Built with search engine optimization in mind, helping your website achieve greater visibility.',
   },
   {
-    imageUrl: 'https://picsum.photos/seed/featureDesign/100/100',
+    imageUrl: 'https://placehold.co/100x100.png',
     aiHint: 'minimalist design',
     title: 'Professional Design',
     description: 'Benefit from bespoke designs crafted by our experienced team, tailored to reflect your brand identity.',
@@ -80,4 +80,3 @@ export function FeaturesSection() {
     </Container>
   );
 }
-

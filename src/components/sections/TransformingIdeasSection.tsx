@@ -13,7 +13,7 @@ export function TransformingIdeasSection() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div className="relative aspect-square lg:aspect-[4/3] order-last lg:order-first">
           <Image
-            src="https://picsum.photos/seed/digital-transformation/800/600"
+            src="https://placehold.co/800x600.png"
             alt="Professionals collaborating on digital transformation, focusing on innovation and growth"
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
@@ -37,17 +37,10 @@ export function TransformingIdeasSection() {
             </Link>
           </Button>
         </div>
-        {/* This div was originally for a right side image on large screens, but its functionality is now handled by the absolute positioned image below.
-            It's kept here structurally but hidden or could be removed if layout holds.
-            For now, it seems the absolute positioned image is independent of this.
-        <div className="hidden lg:block relative aspect-square lg:aspect-[3/4] col-span-1 lg:col-start-3">
-        </div>
-        */}
       </div>
-      {/* Second image, absolutely positioned relative to the container for the large screen decorative effect */}
       <div className="hidden lg:block absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-1/4 w-1/3 max-w-xs xl:max-w-sm 2xl:max-w-md aspect-[3/4] pointer-events-none">
          <Image
-            src="https://picsum.photos/seed/modern-workspace/450/600"
+            src="https://placehold.co/450x600.png"
             alt="Modern workspace illustrating innovation and technology, a clean tech office"
             fill
             sizes="33vw"
@@ -58,4 +51,3 @@ export function TransformingIdeasSection() {
     </Container>
   );
 }
-

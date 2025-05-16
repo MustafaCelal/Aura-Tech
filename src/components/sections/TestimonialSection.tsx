@@ -24,7 +24,7 @@ const testimonialsData: Testimonial[] = [
     quote: "Aura Tech delivered exceptional service and results. Their work has become an invaluable asset to our business. We're amazed by the impact!",
     name: 'Jerome Bell',
     role: 'Doctor',
-    avatarUrl: 'https://picsum.photos/seed/jerome/100/100',
+    avatarUrl: 'https://placehold.co/100x100.png',
     aiHint: 'corporate headshot',
   },
   {
@@ -32,7 +32,7 @@ const testimonialsData: Testimonial[] = [
     quote: "The team at Aura Tech provided outstanding service and a perfect solution for our needs. Their expertise truly transformed our business operations.",
     name: 'Ronald Richards',
     role: 'Businessman',
-    avatarUrl: 'https://picsum.photos/seed/ronald/100/100',
+    avatarUrl: 'https://placehold.co/100x100.png',
     aiHint: 'business professional',
   },
   {
@@ -40,7 +40,7 @@ const testimonialsData: Testimonial[] = [
     quote: "Working with Aura Tech has been a game-changer. Their innovative approach and dedication to our project have made us incredibly happy with the outcome.",
     name: 'Leslie Alexander',
     role: 'Restaurant Owner',
-    avatarUrl: 'https://picsum.photos/seed/leslie/100/100',
+    avatarUrl: 'https://placehold.co/100x100.png',
     aiHint: 'client portrait',
   },
   {
@@ -48,7 +48,7 @@ const testimonialsData: Testimonial[] = [
     quote: "Aura Tech completely transformed our online presence. Their team is not only incredibly talented but also a genuine pleasure to collaborate with. Highly recommended!",
     name: 'Sarah Miller',
     role: 'Marketing Director',
-    avatarUrl: 'https://picsum.photos/seed/sarah/100/100',
+    avatarUrl: 'https://placehold.co/100x100.png',
     aiHint: 'innovative leader',
   },
 ];
@@ -167,4 +167,3 @@ export function TestimonialSection() {
     </Container>
   );
 }
-

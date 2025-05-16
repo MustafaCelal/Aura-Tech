@@ -78,7 +78,7 @@ export function FaqSection() {
           </div>
           <div className="relative aspect-[4/3] w-full max-w-md mx-auto md:max-w-none">
             <Image
-              src="https://picsum.photos/seed/faq-bubbles/600/450"
+              src="https://placehold.co/600x450.png"
               alt="FAQ Illustration with speech bubbles and question mark"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
@@ -112,4 +112,3 @@ export function FaqSection() {
     </Container>
   );
 }
-

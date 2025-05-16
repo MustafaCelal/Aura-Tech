@@ -120,7 +120,7 @@ export function HeroSection() {
       <div className="lg:w-1/2 mt-10 lg:mt-0">
         <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-lg">
           <Image
-            src="https://picsum.photos/seed/auratechhero/1200/900"
+            src="https://placehold.co/1200x900.png"
             alt="Abstract creative illustration representing Aura Tech's services"
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -135,4 +135,3 @@ export function HeroSection() {
     </Container>
   );
 }
-
