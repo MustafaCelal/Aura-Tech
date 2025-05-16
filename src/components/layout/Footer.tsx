@@ -6,7 +6,7 @@ function WebagencyLogo() {
   return (
     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-primary">
       <rect width="32" height="32" rx="8" fill="currentColor"/>
-      <path d="M9 23L12.5 9H14.5L18 23L16.5 23L15.25 18.5H11.75L10.5 23H9ZM12.25 17H14.75L13.5 11.5L12.25 17Z" fill="hsl(var(--background))"/>
+      <path d="M9 23L12.5 9H14.5L18 23L16.5 23L15.25 18.5H11.75L10.5 23H9ZM12.25 17H14.75L13.5 11.5L12.25 17Z" fill="hsl(var(--primary-foreground))"/>
     </svg>
   );
 }

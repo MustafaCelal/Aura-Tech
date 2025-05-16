@@ -4,81 +4,81 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%; /* Almost white, e.g., #FAF9F9 */
-    --foreground: 220 15% 25%; /* Dark cool gray, e.g., #353B48 */
+    --background: 195 53% 96%; /* Very light cyan/blue from image's lightest background area */
+    --foreground: 224 39% 20%; /* Dark blue-gray for text, from "Elevate Your Brand" */
 
     --card: 0 0% 100%; /* White */
-    --card-foreground: 220 15% 25%; /* Dark cool gray */
+    --card-foreground: 224 39% 20%; /* Dark blue-gray for text on cards */
 
     --popover: 0 0% 100%; /* White */
-    --popover-foreground: 220 15% 25%; /* Dark cool gray */
+    --popover-foreground: 224 39% 20%;
 
-    --primary: 210 100% 56%; /* Aura Tech Blue from #2D8FFB */
+    --primary: 175 60% 38%; /* Teal from "Aura Tech" text and "Get Started" button */
     --primary-foreground: 0 0% 100%; /* White */
 
-    --secondary: 220 10% 92%; /* Light Gray - Neutral complement */
-    --secondary-foreground: 220 15% 35%; /* Darker Gray for text on secondary */
+    --secondary: 210 15% 93%; /* Light gray for input field backgrounds */
+    --secondary-foreground: 224 39% 25%; /* Darker Gray for text on secondary */
 
-    --muted: 220 10% 95%; /* Very Light Gray / Off-white - Neutral complement */
-    --muted-foreground: 220 10% 55%; /* Medium gray */
+    --muted: 210 15% 96%; /* Very Light Gray / Off-white for subtle backgrounds */
+    --muted-foreground: 210 10% 45%; /* Medium gray for muted text */
 
-    --accent: 25 95% 58%; /* Vibrant Orange - Contrasting accent #FC8A3C */
-    --accent-foreground: 0 0% 10%; /* Dark text for accent */
+    --accent: 175 60% 38%; /* Teal, same as primary for "Order Now" button */
+    --accent-foreground: 0 0% 100%; /* White */
     
-    --accent-secondary: 180 70% 45%; /* Teal - Secondary accent #26C4C4 */
-    --accent-secondary-foreground: 0 0% 100%; /* White text for secondary accent */
+    --accent-secondary: 195 60% 50%; /* A slightly different shade of blue/cyan */
+    --accent-secondary-foreground: 0 0% 100%;
 
-    --destructive: 0 72% 51%; /* Darker Red for better contrast, e.g., #C83E3E */
+    --destructive: 0 72% 51%; /* Standard red */
     --destructive-foreground: 0 0% 98%; /* Off-white */
 
-    --border: 220 10% 88%; /* Light gray border, e.g., #DCDDE0 */
-    --input: 220 10% 93%; /* Slightly off-white for input backgrounds, e.g., #EBECED */
-    --ring: 210 100% 60%; /* Aura Tech Blue - slightly lighter for focus */
+    --border: 210 10% 88%; /* Light gray border */
+    --input: 210 15% 93%; /* Light gray for input, same as secondary */
+    --ring: 175 60% 43%; /* Teal - slightly lighter for focus */
 
     --radius: 0.5rem;
 
-    /* Gradient colors for body */
-    --gradient-start: 0 0% 98%; /* Match background */
-    --gradient-end: 210 60% 97%; /* Subtle hint of very light desaturated blue */
+    /* Gradient colors for body, matching the image's subtle blueish gradient */
+    --gradient-start: 195 60% 96%; /* Lightest blueish tone from image */
+    --gradient-end: 200 60% 98%;   /* Slightly deeper light blueish tone */
     
     /* --font-inter is defined by the Next.js font loader in layout.tsx */
   }
 
   .dark {
     --background: 220 15% 10%;  /* Very dark cool gray */
-    --foreground: 0 0% 95%;  /* Light gray / off-white */
+    --foreground: 195 15% 90%;  /* Light cyan-gray / off-white */
 
     --card: 220 15% 15%;  /* Darker cool gray for cards */
-    --card-foreground: 0 0% 95%; /* Light gray / off-white */
+    --card-foreground: 195 15% 90%;
 
     --popover: 220 15% 12%; /* Darker popover */
-    --popover-foreground: 0 0% 95%; /* Light gray / off-white */
+    --popover-foreground: 195 15% 90%;
 
-    --primary: 210 100% 60%;  /* Aura Tech Blue - Brighter for dark mode */
+    --primary: 175 65% 48%;  /* Teal - Brighter for dark mode */
     --primary-foreground: 0 0% 100%; /* White */
 
-    --secondary: 220 10% 20%; /* Dark Gray - Neutral complement */
-    --secondary-foreground: 0 0% 85%; /* Lighter gray text */
+    --secondary: 210 10% 22%; /* Dark Gray for input backgrounds */
+    --secondary-foreground: 195 10% 80%; /* Lighter gray text */
 
-    --muted: 220 10% 15%; /* Darker very light gray */
-    --muted-foreground: 0 0% 70%; /* Gray text */
+    --muted: 210 10% 18%; /* Darker very light gray */
+    --muted-foreground: 210 10% 65%; /* Gray text */
 
-    --accent: 25 90% 62%;  /* Brighter Orange for dark mode */
-    --accent-foreground: 0 0% 10%; /* Dark text for accent */
+    --accent: 175 65% 48%;  /* Teal, same as primary */
+    --accent-foreground: 0 0% 100%;
 
-    --accent-secondary: 180 65% 50%; /* Brighter Teal for dark mode */
-    --accent-secondary-foreground: 0 0% 100%; /* White text */
+    --accent-secondary: 195 60% 55%; /* Brighter version of accent-secondary */
+    --accent-secondary-foreground: 0 0% 100%;
 
-    --destructive: 0 70% 55%; /* Darker Red for dark mode, slightly brighter */
-    --destructive-foreground: 0 0% 98%; /* Off-white */
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 220 10% 30%; /* Dark gray border */
-    --input: 220 10% 22%;  /* Darker input bg */
-    --ring: 210 100% 65%;  /* Brighter Blue for ring */
+    --border: 210 10% 30%; /* Dark gray border */
+    --input: 210 10% 22%;  /* Darker input bg, same as secondary */
+    --ring: 175 65% 53%;  /* Brighter Teal for ring */
     
     /* Gradient colors for dark mode body */
-    --gradient-start-dark: 220 15% 10%; /* Match dark background */
-    --gradient-end-dark: 210 50% 12%; /* Subtle hint of dark desaturated blue */
+    --gradient-start-dark: 220 20% 8%;  /* Dark blueish tone for dark gradient start */
+    --gradient-end-dark: 220 20% 12%; /* Slightly lighter dark blueish tone for dark gradient end */
   }
 
   * {
