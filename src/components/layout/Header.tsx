@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from 'next/link';
@@ -8,7 +9,7 @@ import { Menu } from 'lucide-react';
 const navLinks = [
   { href: '#projects', label: 'Portfolio' },
   { href: '#about', label: 'About Us' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/blog', label: 'Blog' }, // "Contact" removed, "Blog" added
 ];
 
 function WebagencyLogo() {
@@ -44,7 +45,7 @@ export function Header() {
               </Link>
             ))}
           </nav>
-          <Button asChild size="md" className="bg-accent text-accent-foreground hover:bg-accent/90">
+          <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-full px-10">
             <Link href="#contact">Get a Quote</Link>
           </Button>
         </div>
@@ -74,7 +75,7 @@ export function Header() {
                   {link.label}
                 </Link>
               ))}
-              <Button asChild size="md" className="w-full mt-2 bg-accent text-accent-foreground hover:bg-accent/90">
+              <Button asChild size="lg" className="w-full mt-2 bg-accent text-accent-foreground hover:bg-accent/90 rounded-full px-10">
                 <Link href="#contact">Get a Quote</Link>
               </Button>
             </div>
