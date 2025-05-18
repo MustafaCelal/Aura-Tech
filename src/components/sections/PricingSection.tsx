@@ -98,16 +98,16 @@ export function PricingSection() {
           let newFormattedMessage = '';
           switch (tierName) {
             case 'Launch':
-              newFormattedMessage = "Merhaba, Launch planınızla ilgileniyorum. Yeni başlayan bir serbest çalışan olarak profesyonel bir online varlık oluşturmak istiyorum; kurulum süreci ve ilk adımlar hakkında bilgi alabilir miyim?";
+              newFormattedMessage = "Hello, I'm interested in your Launch plan. As a freelancer just starting out, I'm looking to establish a professional online presence. Could you provide more information on the setup process and initial steps?";
               break;
             case 'Professional':
-              newFormattedMessage = "İşletmem için Professional planınızdaki gelişmiş SEO, blog entegrasyonu ve takvim/rezervasyon özelliklerini değerlendirmek istiyorum. Bu planın benim ihtiyaçlarıma nasıl uyacağını daha detaylı görüşebilir miyiz?";
+              newFormattedMessage = "I'd like to discuss the Professional plan for my business. I'm particularly interested in the advanced SEO, blog integration, and calendar/booking features. Could we explore how this plan would fit my specific needs in more detail?";
               break;
             case 'Scale':
-              newFormattedMessage = "Büyüyen bir hizmet sağlayıcı olarak Scale planınızdaki modüler sayfalar ve büyüme önerileri raporu dikkatimi çekti. İşimiz için nasıl bir stratejik fayda sağlayabileceğini görüşmek üzere iletişime geçmenizi rica ediyorum.";
+              newFormattedMessage = "As a growing service provider, the modular pages and growth suggestions report in your Scale plan have caught my attention. I'd appreciate it if we could discuss the strategic benefits this plan could offer my business.";
               break;
             case 'Enterprise':
-              newFormattedMessage = "Karmaşık gereksinimleri olan kurumsal bir proje için Enterprise planınızdaki özel çözümler, API entegrasyonları ve adanmış destek ekibiniz hakkında bilgi almak istiyorum. Durumumuza özel bir teklif için görüşme talebim var.";
+              newFormattedMessage = "For a corporate project with complex requirements, I'm interested in learning more about the custom solutions, API integrations, and dedicated support team offered with your Enterprise plan. I'd like to request a meeting to discuss a tailored proposal for our situation.";
               break;
             default:
               newFormattedMessage = `Hello, I'm interested in learning more about the ${tierName} plan.`;
