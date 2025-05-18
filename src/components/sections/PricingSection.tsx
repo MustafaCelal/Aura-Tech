@@ -1,6 +1,8 @@
+
 'use client';
 
-import Link from 'next/link';
+import { useState, useEffect } from 'react';
+import Link from 'next/link'; // Link will still be used for the main CTA if needed, but individual tier buttons will use onClick.
 import { Container } from '@/components/layout/Container';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -20,7 +22,7 @@ const pricingTiers = [
       'Contact Form Integration',
     ],
     cta: 'Get Started',
-    href: '#contact',
+    href: '#contact', // This href will be used by the new onClick handler
     featured: false,
   },
   {
@@ -74,6 +76,41 @@ const pricingTiers = [
 ];
 
 export function PricingSection() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  const handleTierSelection = (tierName: string, tierHref: string) => {
+    if (!isMounted) return;
+
+    const contactSection = document.getElementById(tierHref.substring(1)); // Remove '#' from href
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      setTimeout(() => {
+        const nameInput = document.getElementById('name') as HTMLInputElement | null;
+        const emailInput = document.getElementById('email') as HTMLInputElement | null;
+        const messageTextarea = document.getElementById('message') as HTMLTextAreaElement | null;
+
+        if (messageTextarea) {
+          const currentMessage = messageTextarea.value;
+          const newFormattedMessage = `Interested in Pricing Plan: ${tierName}\n--------------------------\n${currentMessage}`;
+          messageTextarea.value = newFormattedMessage;
+          // Dispatch input event for React Hook Form or other libraries to pick up the change
+          messageTextarea.dispatchEvent(new Event('input', { bubbles: true }));
+        }
+
+        if (nameInput) {
+          nameInput.focus();
+        } else if (emailInput) { 
+          emailInput.focus();
+        }
+      }, 300); 
+    }
+  };
+
   return (
     <Container id="pricing" className="bg-muted/30 dark:bg-muted/10 rounded-xl">
       <div className="mb-12 text-center">
@@ -120,12 +157,12 @@ export function PricingSection() {
             </CardContent>
             <CardFooter className="mt-auto p-6">
               <Button
-                asChild
                 size="lg"
                 variant={tier.featured ? 'default' : 'outline'}
                 className="w-full"
+                onClick={() => handleTierSelection(tier.name, tier.href)}
               >
-                <Link href={tier.href}>{tier.cta}</Link>
+                {tier.cta}
               </Button>
             </CardFooter>
           </Card>
