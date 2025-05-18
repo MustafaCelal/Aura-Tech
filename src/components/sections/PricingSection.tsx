@@ -22,7 +22,7 @@ const pricingTiers = [
       'Contact Form Integration',
     ],
     cta: 'Get Started',
-    hrefId: 'contact', // Renamed from href to hrefId to avoid confusion with actual links
+    hrefId: 'contact', 
     featured: false,
   },
   {
@@ -91,26 +91,36 @@ export function PricingSection() {
 
       setTimeout(() => {
         const nameInput = document.getElementById('name') as HTMLInputElement | null;
-        const emailInput = document.getElementById('email') as HTMLInputElement | null; // Keep for focus fallback
+        const emailInput = document.getElementById('email') as HTMLInputElement | null; 
         const messageTextarea = document.getElementById('message') as HTMLTextAreaElement | null;
 
         if (messageTextarea) {
           let newFormattedMessage = '';
-          if (tierName.toLowerCase() === 'enterprise') {
-            newFormattedMessage = `Hello, I'd like to request a quote for the ${tierName} plan.`;
-          } else {
-            newFormattedMessage = `Hello, I'm interested in learning more about the ${tierName} plan.`;
+          switch (tierName) {
+            case 'Launch':
+              newFormattedMessage = "Merhaba, Launch planınızla ilgileniyorum. Yeni başlayan bir serbest çalışan olarak profesyonel bir online varlık oluşturmak istiyorum; kurulum süreci ve ilk adımlar hakkında bilgi alabilir miyim?";
+              break;
+            case 'Professional':
+              newFormattedMessage = "İşletmem için Professional planınızdaki gelişmiş SEO, blog entegrasyonu ve takvim/rezervasyon özelliklerini değerlendirmek istiyorum. Bu planın benim ihtiyaçlarıma nasıl uyacağını daha detaylı görüşebilir miyiz?";
+              break;
+            case 'Scale':
+              newFormattedMessage = "Büyüyen bir hizmet sağlayıcı olarak Scale planınızdaki modüler sayfalar ve büyüme önerileri raporu dikkatimi çekti. İşimiz için nasıl bir stratejik fayda sağlayabileceğini görüşmek üzere iletişime geçmenizi rica ediyorum.";
+              break;
+            case 'Enterprise':
+              newFormattedMessage = "Karmaşık gereksinimleri olan kurumsal bir proje için Enterprise planınızdaki özel çözümler, API entegrasyonları ve adanmış destek ekibiniz hakkında bilgi almak istiyorum. Durumumuza özel bir teklif için görüşme talebim var.";
+              break;
+            default:
+              newFormattedMessage = `Hello, I'm interested in learning more about the ${tierName} plan.`;
           }
           
-          messageTextarea.value = newFormattedMessage; // This will clear previous content and set the new one.
-          // Dispatch input event for React Hook Form or other libraries to pick up the change
+          messageTextarea.value = newFormattedMessage; 
           messageTextarea.dispatchEvent(new Event('input', { bubbles: true }));
         }
 
         if (nameInput) {
           nameInput.focus();
         } else if (emailInput) { 
-          emailInput.focus(); // Fallback focus
+          emailInput.focus(); 
         }
       }, 300); 
     }
