@@ -15,7 +15,6 @@ import { BlogSection } from '@/components/sections/BlogSection';
 import { CtaSection } from '@/components/sections/CtaSection';
 import { FaqSection } from '@/components/sections/FaqSection';
 import { PricingSection } from '@/components/sections/PricingSection';
-import { NewsletterSection } from '@/components/sections/NewsletterSection';
 
 
 export default function Home() {
@@ -32,7 +31,6 @@ export default function Home() {
         <TestimonialSection />
         <PricingSection />
         <BlogSection />
-        <NewsletterSection/>
         <FaqSection />
         <CtaSection />
         <AiHeadlineTool />
