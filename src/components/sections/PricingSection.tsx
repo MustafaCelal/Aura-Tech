@@ -2,7 +2,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link'; // Link will still be used for the main CTA if needed, but individual tier buttons will use onClick.
+// Link component is not used for individual tier CTAs anymore.
 import { Container } from '@/components/layout/Container';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -22,7 +22,7 @@ const pricingTiers = [
       'Contact Form Integration',
     ],
     cta: 'Get Started',
-    href: '#contact', // This href will be used by the new onClick handler
+    hrefId: 'contact', // Renamed from href to hrefId to avoid confusion with actual links
     featured: false,
   },
   {
@@ -38,7 +38,7 @@ const pricingTiers = [
       'Extended Hosting & Maintenance',
     ],
     cta: 'Choose Professional',
-    href: '#contact',
+    hrefId: 'contact',
     featured: true,
   },
   {
@@ -54,7 +54,7 @@ const pricingTiers = [
       'Priority Support',
     ],
     cta: 'Select Scale',
-    href: '#contact',
+    hrefId: 'contact',
     featured: false,
   },
   {
@@ -70,7 +70,7 @@ const pricingTiers = [
       'Scalable Infrastructure',
     ],
     cta: 'Request Quote',
-    href: '#contact',
+    hrefId: 'contact',
     featured: false,
   },
 ];
@@ -82,22 +82,27 @@ export function PricingSection() {
     setIsMounted(true);
   }, []);
 
-  const handleTierSelection = (tierName: string, tierHref: string) => {
+  const handleTierSelection = (tierName: string, contactSectionId: string) => {
     if (!isMounted) return;
 
-    const contactSection = document.getElementById(tierHref.substring(1)); // Remove '#' from href
+    const contactSection = document.getElementById(contactSectionId);
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
       setTimeout(() => {
         const nameInput = document.getElementById('name') as HTMLInputElement | null;
-        const emailInput = document.getElementById('email') as HTMLInputElement | null;
+        const emailInput = document.getElementById('email') as HTMLInputElement | null; // Keep for focus fallback
         const messageTextarea = document.getElementById('message') as HTMLTextAreaElement | null;
 
         if (messageTextarea) {
-          const currentMessage = messageTextarea.value;
-          const newFormattedMessage = `Interested in Pricing Plan: ${tierName}\n--------------------------\n${currentMessage}`;
-          messageTextarea.value = newFormattedMessage;
+          let newFormattedMessage = '';
+          if (tierName.toLowerCase() === 'enterprise') {
+            newFormattedMessage = `Hello, I'd like to request a quote for the ${tierName} plan.`;
+          } else {
+            newFormattedMessage = `Hello, I'm interested in learning more about the ${tierName} plan.`;
+          }
+          
+          messageTextarea.value = newFormattedMessage; // This will clear previous content and set the new one.
           // Dispatch input event for React Hook Form or other libraries to pick up the change
           messageTextarea.dispatchEvent(new Event('input', { bubbles: true }));
         }
@@ -105,14 +110,14 @@ export function PricingSection() {
         if (nameInput) {
           nameInput.focus();
         } else if (emailInput) { 
-          emailInput.focus();
+          emailInput.focus(); // Fallback focus
         }
       }, 300); 
     }
   };
 
   return (
-    <Container id="pricing" className="bg-muted/30 dark:bg-muted/10 rounded-xl">
+    <Container id="pricing" className="bg-primary/5 dark:bg-muted/10 rounded-xl">
       <div className="mb-12 text-center">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
           Strategic Packages for Your Digital Success
@@ -160,7 +165,7 @@ export function PricingSection() {
                 size="lg"
                 variant={tier.featured ? 'default' : 'outline'}
                 className="w-full"
-                onClick={() => handleTierSelection(tier.name, tier.href)}
+                onClick={() => handleTierSelection(tier.name, tier.hrefId)}
               >
                 {tier.cta}
               </Button>
@@ -171,3 +176,4 @@ export function PricingSection() {
     </Container>
   );
 }
+
