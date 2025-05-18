@@ -68,7 +68,7 @@ export function BlogSection() {
       </div>
       <div className="text-center">
         <Button asChild variant="outline" size="lg">
-          <Link href="#">View All Blog</Link>
+          <Link href="/blog">View All Blog</Link>
         </Button>
       </div>
     </Container>
