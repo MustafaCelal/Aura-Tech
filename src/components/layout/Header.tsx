@@ -7,9 +7,9 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 
 const navLinks = [
-  { href: '#projects', label: 'Portfolio' },
   { href: '#about', label: 'About Us' },
-  { href: '/blog', label: 'Blog' }, // "Contact" removed, "Blog" added
+  { href: '/tools', label: 'Tools' },
+  { href: '/blog', label: 'Blog' },
 ];
 
 function WebagencyLogo() {
@@ -36,10 +36,10 @@ export function Header() {
           <nav className="flex gap-6 items-center">
             {navLinks.map((link) => (
               <Link
-                key={link.href}
+                key={link.label} // Use label as key if hrefs can be duplicated for sections
                 href={link.href}
                 className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary leading-normal"
-                prefetch={false}
+                prefetch={link.href.startsWith('/')} // Prefetch only internal page links
               >
                 {link.label}
               </Link>
@@ -67,10 +67,10 @@ export function Header() {
               </Link>
               {navLinks.map((link) => (
                 <Link
-                  key={link.href}
+                  key={link.label}
                   href={link.href}
                   className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary py-2 leading-normal"
-                  prefetch={false}
+                  prefetch={link.href.startsWith('/')}
                 >
                   {link.label}
                 </Link>
